@@ -1,0 +1,65 @@
+EECS 301 Notes:
+
+Sep. 29-
+
+**Robot Control**
+
+input in --> plant --> output to
+
+Inputs:
+	raw sensor
+	processes
+	features
+
+Outputs:
+	low level output: motor position
+	high level output: position world
+	mid level(?) output: position of body
+
+Types of Control: [Closed loop vs. Open loop]
+
+Closed Loop Control (feedforward):
+	output affects future input
+
+Open Loop Control (feedback):
+	input leads to one output (output does not affect new input)
+
+Common forms of feedback control:
+	P: proportional control
+		-- term proportional to error implemented in new input
+		-- u(t) = Kp * e(t)
+	D: derivative control
+	PD: proportional derivative control:
+		-- u(t) = Kp e(t) + Kd dR(t)/dt
+	I: integral control
+	PID: proportional integral control
+		-- u(t) = Kp * e(t) + Kd * dR(t)/dt + 
+				Ki integral(e(T) dT) from o to T
+
+Reactive Control:
+	-- states
+	-- mutex
+	-- subsumption architecture
+
+
+
+OCTOBER 18TH
+
+**Navigation**
+
+for navigation you need...
+	a) ways to locomote; estimate distance travelled
+		- Dead Reckoning: ...
+			- susceptible to drift :(
+		- Filters are way to reconcile predictions with observations
+	b) ways to know where you are in the world
+		- Localization: how to know where we are
+		- options: 
+			- know where we start, estimate distance, know end
+			- unknown start
+				- use coordinate frames (global & local frames)
+				
+	c) ways to represent obstacls, locations of interest
+		- 	
+	d) ways to build paths
+		-
